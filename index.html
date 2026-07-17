@@ -1,25 +1,68 @@
-function reply(){
-let q=document.getElementById("question").value.toLowerCase();
-let ans="";
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Usman Gazar AI</title>
 
-if(q==""){
-ans="براہ کرم کوئی سوال لکھیں۔";
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#111;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
-else if(q=="hello" || q=="hi"){
-ans="السلام علیکم! Usman Gazar AI میں خوش آمدید۔";
+.box{
+    width:90%;
+    max-width:500px;
+    text-align:center;
 }
-else if(q=="آپ کون ہیں؟" || q=="who are you"){
-ans="میں Usman Gazar AI ہوں، آپ کی مدد کے لیے حاضر ہوں۔";
+h1{
+    color:#00ff99;
 }
-else if(q=="آپ کیسے ہیں؟" || q=="how are you"){
-ans="الحمدللہ، میں ٹھیک ہوں۔ آپ کیسے ہیں؟";
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    margin-top:15px;
+    font-size:16px;
 }
-else{
-ans="معذرت، اس سوال کا جواب ابھی Demo AI میں موجود نہیں۔";
+button{
+    margin-top:15px;
+    padding:12px 25px;
+    background:#00ff99;
+    border:none;
+    border-radius:8px;
+    font-size:18px;
+    cursor:pointer;
 }
+#output{
+    margin-top:20px;
+    font-size:18px;
+}
+</style>
 
-document.getElementById("output").innerHTML=ans;
-}
+</head>
+<body>
+
+<div class="box">
+
+<h1>🤖 Usman Gazar AI</h1>
+
+<input id="question" placeholder="اپنا سوال لکھیں...">
+
+<button onclick="reply()">Send</button>
+
+<div id="output"></div>
+
+</div>
+
+<script>
 function reply(){
 
 let q=document.getElementById("question").value.toLowerCase();
@@ -35,13 +78,14 @@ else if(q=="who are you" || q=="آپ کون ہیں؟"){
 ans="میں Usman Gazar AI کا ڈیمو ہوں۔";
 }
 else if(q=="how are you" || q=="آپ کیسے ہیں؟"){
-ans="الحمدللہ، میں ٹھیک ہوں۔ آپ کیسے ہیں؟";
+ans="الحمدللہ، میں ٹھیک ہوں۔";
 }
 else{
-ans="معذرت، یہ صرف ڈیمو ہے۔ اصل AI ابھی شامل نہیں کی گئی۔";
+ans="یہ صرف Demo AI ہے۔ اصل AI ابھی شامل نہیں کی گئی۔";
 }
 
 document.getElementById("output").innerHTML=ans;
+
 }
 </script>
 
