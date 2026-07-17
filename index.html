@@ -20,3 +20,30 @@ ans="معذرت، اس سوال کا جواب ابھی Demo AI میں موجود
 
 document.getElementById("output").innerHTML=ans;
 }
+function reply(){
+
+let q=document.getElementById("question").value.toLowerCase();
+let ans="";
+
+if(q==""){
+ans="براہ کرم کوئی سوال لکھیں۔";
+}
+else if(q=="hello" || q=="hi"){
+ans="السلام علیکم! Usman Gazar AI میں خوش آمدید۔";
+}
+else if(q=="who are you" || q=="آپ کون ہیں؟"){
+ans="میں Usman Gazar AI کا ڈیمو ہوں۔";
+}
+else if(q=="how are you" || q=="آپ کیسے ہیں؟"){
+ans="الحمدللہ، میں ٹھیک ہوں۔ آپ کیسے ہیں؟";
+}
+else{
+ans="معذرت، یہ صرف ڈیمو ہے۔ اصل AI ابھی شامل نہیں کی گئی۔";
+}
+
+document.getElementById("output").innerHTML=ans;
+}
+</script>
+
+</body>
+</html>
