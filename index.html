@@ -1,83 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Usman Gazar AI</title>
-
-<style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#111;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-}
-
-.box{
-width:90%;
-max-width:500px;
-text-align:center;
-}
-
-h1{
-color:#00ff99;
-}
-
-input{
-width:100%;
-padding:12px;
-border:none;
-border-radius:8px;
-margin-top:15px;
-}
-
-button{
-margin-top:15px;
-padding:12px 25px;
-background:#00ff99;
-border:none;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
-}
-
-#output{
-margin-top:20px;
-font-size:18px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="box">
-<h1>🤖 Usman Gazar AI</h1>
-
-<input id="question" placeholder="Ask anything...">
-
-<button onclick="reply()">Send</button>
-
-<div id="output"></div>
-</div>
-
-<script>
 function reply(){
-let q=document.getElementById("question").value;
+let q=document.getElementById("question").value.toLowerCase();
+let ans="";
 
 if(q==""){
-document.getElementById("output").innerHTML="Please type something.";
-}else{
-document.getElementById("output").innerHTML="You asked: <b>"+q+"</b><br><br>AI feature coming soon...";
+ans="براہ کرم کوئی سوال لکھیں۔";
 }
+else if(q=="hello" || q=="hi"){
+ans="السلام علیکم! Usman Gazar AI میں خوش آمدید۔";
 }
-</script>
+else if(q=="آپ کون ہیں؟" || q=="who are you"){
+ans="میں Usman Gazar AI ہوں، آپ کی مدد کے لیے حاضر ہوں۔";
+}
+else if(q=="آپ کیسے ہیں؟" || q=="how are you"){
+ans="الحمدللہ، میں ٹھیک ہوں۔ آپ کیسے ہیں؟";
+}
+else{
+ans="معذرت، اس سوال کا جواب ابھی Demo AI میں موجود نہیں۔";
+}
 
-</body>
-</html>
-</div>
-</body>
-</html>
+document.getElementById("output").innerHTML=ans;
+}
