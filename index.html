@@ -1,17 +1,80 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Usman Gazar AI</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#111;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+width:90%;
+max-width:500px;
+text-align:center;
+}
+
+h1{
+color:#00ff99;
+}
+
+input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+margin-top:15px;
+}
+
+button{
+margin-top:15px;
+padding:12px 25px;
+background:#00ff99;
+border:none;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+#output{
+margin-top:20px;
+font-size:18px;
+}
+</style>
 </head>
-<body style="background:#111;color:white;text-align:center;font-family:Arial;padding:50px;">
+
+<body>
+
+<div class="box">
 <h1>🤖 Usman Gazar AI</h1>
-<p>Welcome to Usman Gazar AI</p>
 
-<input type="text" placeholder="اپنا سوال لکھیں..." style="width:80%;padding:12px;">
-<br><br>
+<input id="question" placeholder="Ask anything...">
 
-<button style="padding:12px 30px;">Send</button>
+<button onclick="reply()">Send</button>
+
+<div id="output"></div>
+</div>
+
+<script>
+function reply(){
+let q=document.getElementById("question").value;
+
+if(q==""){
+document.getElementById("output").innerHTML="Please type something.";
+}else{
+document.getElementById("output").innerHTML="You asked: <b>"+q+"</b><br><br>AI feature coming soon...";
+}
+}
+</script>
+
 </body>
 </html>
